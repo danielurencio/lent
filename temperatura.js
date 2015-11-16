@@ -12,7 +12,11 @@ var io = require('socket.io')(httpServer);
 app.use(express.static(__dirname + '/'));
 
 app.get('/', function(req, res) {
+<<<<<<< HEAD
         res.sendFile(__dirname + '/temperatura.html');
+=======
+        res.sendFile(__dirname + '/temperature.html');
+>>>>>>> 1ac2d610a0046ae178223a667a58a2f245fa69c5
 });
 
 httpServer.listen(8080, '0.0.0.0', function() {
