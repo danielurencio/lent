@@ -14,7 +14,7 @@
 <body>
     <script>
 
-d3.select('body').style("background-color", "red");
+d3.select('body').style("background-color", "black");
 
 var socket = io.connect();
 
@@ -28,7 +28,7 @@ socket.on("ya", function(i) {
            .attr("font-size", "150px")
            .attr("font-family", "bebas")
            .attr("text-anchor", "middle")
-           .attr("fill", "white")
+           .attr("fill", "rgba(255,255,255,0.25)")
 	   .text(i.val + " °C");
 });
     </script>
