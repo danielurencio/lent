@@ -6,7 +6,7 @@ var clientSocket = require("socket.io-client");
 var io = require('socket.io')(httpServer);
 var net = require("net");
 
-var HOST = "192.168.0.9"//"192.168.1.64";
+var HOST = /*"192.168.0.9"*/"192.168.1.64";
 var PORT = 5045;
 
 var client = new net.Socket();
@@ -38,8 +38,8 @@ client.on("data", function(data) {
   if(temp.length == 1) {
     if(temp[0] != t) {
       t = temp[0];
-      var T="t=" + t;
-      console.log(T);
+//      var T="t=" + t;
+      console.log(t);
 //      req.end(T); //req.end();
 
 

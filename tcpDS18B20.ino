@@ -7,18 +7,15 @@
 OneWire ourWire(Pin);
 DallasTemperature sensors(&ourWire);
 
-// Hardcode WiFi parameters as this isn't going to be moving around.
-const char* ssid = "INFINITUM_C83CE4";
-const char* password = "F26DC83CE5";
-
-// Start a TCP Server on port 5045
-WiFiServer server(5045);
-WiFiClient client;
+const char* ssid = "Sersol";
+const char* password = "mexicoespana";
+const char* host = "192.168.0.6";
+const int port = 5000;
 char temperatureString[5];
 
 void setup() {
- // pinMode(16,OUTPUT);
   Serial.begin(115200);
+  WiFi.mode(WIFI_STA);
   WiFi.begin(ssid,password);
   //IPAddress myIP = WiFi.softAPIP();
   //Serial.println(myIP);
@@ -32,30 +29,28 @@ void setup() {
   Serial.print("Connected to "); Serial.println(ssid);
   Serial.print("IP Address: "); Serial.println(WiFi.localIP());
   
-  // Start the TCP server
-  server.begin();
   sensors.begin();
 }
 
+WiFiClient client;
+float t = 0.0;
+
 void loop() {
-  TCPServer();
-}
 
-void TCPServer () {
-  if(!client.connected()){
-    client = server.available();
-  } else {
-    while (client.connected()) {
-      sensors.requestTemperatures();
-      float temp = sensors.getTempCByIndex(0);
-      dtostrf(temp,2,2,temperatureString);
-      client.print(temperatureString);
-      client.print('\n');
-    }
+  if(!client.connect(host,port)) {
+    Serial.println("...connectino failed!");
+    Serial.println("Retrying in 5 seconds...");
+    delay(5000);
+    return;
   }
+
+  sensors.requestTemperatures();
+  float temp = sensors.getTempCByIndex(0);
+  
+  if(temp != t) {
+    t = temp;
+    dtostrf(t,2,2,temperatureString);   
+    client.print(temperatureString);
+  }
+
 }
-
-void temp() {
-
-}
-
