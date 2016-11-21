@@ -36,7 +36,7 @@ app.get('/', function(req, res) {
 
 
 app.get('/graph', function(req, res) {
-        res.sendFile(__dirname + '/temperatura.html');
+        res.sendFile(__dirname + '/path.html');
 });
 
 httpServer.listen(3000, '0.0.0.0', function() {
