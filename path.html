@@ -2,19 +2,33 @@
 <meta charset="utf-8">
 <style>
 
+html,body {
+  margin: 0px;
+}
+
+
 .line {
   fill: none;
-  stroke: #000;
+  stroke: black;
   stroke-width: 1.5px;
 }
 
 </style>
 <svg width="960" height="500"></svg>
 <script src="//d3js.org/d3.v4.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
 <script>
-    var n = 40,
-    random = d3.randomNormal(20, 2),
-    num = 20;
-    data = d3.range(n).map(function(d){ return num; });
+
+  var socket = io.connect();
+  var n = 40;
+  var num = 0;
+  var data = d3.range(n).map(function(d){ return num; });
+
+  socket.on("ya", function(d) {
+//    console.log(d);
+    num = d;
+//    d3.selectAll(".line").transition().duration(1000).style("stroke","blue");
+  });
+
 </script>
 <script src="path.js"></script>

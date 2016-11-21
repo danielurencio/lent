@@ -9,14 +9,15 @@ var svg = d3.select("svg"),
     margin = {top: 20, right: 20, bottom: 20, left: 40},
     width = +svg.attr("width") - margin.left - margin.right,
     height = +svg.attr("height") - margin.top - margin.bottom,
-    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+	.attr("class","main");
 
 var x = d3.scaleLinear()
     .domain([1, n - 2])  // <--- ¿Por qué 'n - 2'?
     .range([0, width]);
 
 var y = d3.scaleLinear()
-    .domain([15, 25])
+    .domain([18, 20])
     .range([height, 0]);
 
 var line = d3.line()
@@ -32,7 +33,7 @@ g.append("defs").append("clipPath")
 
 g.append("g")
     .attr("class", "axis axis--x")
-    .attr("transform", "translate(0," + y(15) + ")")
+    .attr("transform", "translate(0," + y(18) + ")")
     .call(d3.axisBottom(x));
 
 g.append("g")
@@ -49,10 +50,13 @@ g.append("g")
     .ease(d3.easeLinear)
     .on("start", tick);
 
+var b = d3.select(".main").node().getBBox();
+console.log(b);
+
 function tick() {
 
   // Push a new data point onto the back.
-  data.push(24);
+  data.push(num);
 
   // Redraw the line.
   d3.select(this)
