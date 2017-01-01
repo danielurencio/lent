@@ -3,30 +3,53 @@
 <style>
 
 html,body {
+  overflow:hidden;
+  padding:0px;
   margin: 0px;
+  background-color:black;
 }
 
+.tick text {
+  fill: rgba(255,255,255,0.5);
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: rgba(255,255,255,0.5);
+  shape-rendering: crispEdges;
+}
 
 .line {
-  fill: none;
-  stroke: black;
-  stroke-width: 1.5px;
+  fill: rgba(255,255,255,0.5);
+/*  stroke: yellow;
+  stroke-width: 1.5px; */
 }
 
 </style>
-<svg width="960" height="500"></svg>
+<body>
+<svg></svg>
+</body>
 <script src="//d3js.org/d3.v4.min.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script>
+
+var svg = d3.select("svg").attr("width",window.innerWidth).attr("height",window.innerHeight);
 
   var socket = io.connect();
   var n = 40;
   var num = 0;
   var data = d3.range(n).map(function(d){ return num; });
 
-  socket.on("ya", function(d) {
+  var display = svg.append("text")
+    .attr("x", window.innerWidth / 2)
+    .attr("y", window.innerHeight / 2)
+    .attr("fill", "white");
+
+  socket.on("watts", function(d) {
 //    console.log(d);
     num = d;
+    display.text(num)
 //    d3.selectAll(".line").transition().duration(1000).style("stroke","blue");
   });
 

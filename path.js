@@ -3,10 +3,10 @@
 //    random = d3.randomNormal(20, 2),       ///  con una media de 0 y una desviación de 0.2.
 //    data = d3.range(n).map(random);        ///
 /////////////////////////////////////////////
+var valores = [0,3500]
 
-
-var svg = d3.select("svg"),
-    margin = {top: 20, right: 20, bottom: 20, left: 40},
+//var svg = d3.select("svg").attr("width",window.innerWidth).attr("height",window.innerHeight),
+    var margin = {top: 5, right: 5, bottom: 5, left: 5},
     width = +svg.attr("width") - margin.left - margin.right,
     height = +svg.attr("height") - margin.top - margin.bottom,
     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")")
@@ -17,13 +17,14 @@ var x = d3.scaleLinear()
     .range([0, width]);
 
 var y = d3.scaleLinear()
-    .domain([18, 20])
+    .domain(valores)
     .range([height, 0]);
 
-var line = d3.line()
+var line = d3.area()
     .curve(d3.curveBasis)
     .x(function(d, i) { return x(i); })
-    .y(function(d, i) { return y(d); });
+    .y0(height)
+    .y1(function(d, i) { return y(d); });
 
 g.append("defs").append("clipPath")
     .attr("id", "clip")
@@ -33,12 +34,12 @@ g.append("defs").append("clipPath")
 
 g.append("g")
     .attr("class", "axis axis--x")
-    .attr("transform", "translate(0," + y(18) + ")")
-    .call(d3.axisBottom(x));
+    .attr("transform", "translate(0," + y(0) + ")")
+    .call(d3.axisTop(x).ticks(0));
 
 g.append("g")
     .attr("class", "axis axis--y")
-    .call(d3.axisLeft(y));
+    .call(d3.axisRight(y).ticks(20));
 
 g.append("g")
     .attr("clip-path", "url(#clip)")
