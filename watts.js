@@ -6,9 +6,9 @@ var clientSocket = require("socket.io-client");
 var io = require('socket.io')(httpServer);
 var net = require("net");
 var ioC = require('socket.io-client');
-var host1 = "http://localhost:8080";
-var host2 = "http://iot-urencio.rhcloud.com:8000"
-var clientSocket = ioC.connect("http://192.168.0.6:3000", {reconnect: true});
+var host1 = "http://192.168.0.7:80";
+var host2 = "http://45.76.237.136:80"
+var clientSocket = ioC.connect(host2, {reconnect: true});
 
 var HOST = process.argv[2];
 var PORT = 5555;
@@ -21,7 +21,7 @@ var server = net.createServer({ 'encoding':'utf8'}, function(socket) {
       var apparentPW = Math.round(data*120)
       console.log(apparentPW);
       io.emit("watts",apparentPW);
-    clientSocket.emit("watts",apparentPW);
+      clientSocket.emit("watts",apparentPW);
     }
   });
 
@@ -46,3 +46,4 @@ app.get('/graph', function(req, res) {
 httpServer.listen(3000, '0.0.0.0', function() {
         console.log('El servidor está listo...');
 });
+
