@@ -11,7 +11,7 @@ MongoClient.connect('mongodb://localhost:27017',function(err,client) {
     console.log('Socket.io connection established...');
 
     socket.on('watts', function (data) {
-          col.insert({ 'time':new Date().getTime(), 'watts':data });
+          col.insert({ '_id':new Date().getTime(), 'watts':data });
 	  io.emit('watts',data);
     });
   });
