@@ -655,7 +655,7 @@ please place it out of board.</text>
 <text x="55.88" y="68.58" size="1.778" layer="91">A1</text>
 </plain>
 <instances>
-<instance part="C1" gate="G$1" x="30.48" y="48.26" rot="R90"/>
+<instance part="C1" gate="G$1" x="30.48" y="48.26" rot="R270"/>
 <instance part="R1" gate="G$1" x="43.18" y="60.96" rot="R90"/>
 <instance part="R2" gate="G$1" x="43.18" y="45.72" rot="R270"/>
 <instance part="R3" gate="G$1" x="17.78" y="60.96" rot="R90"/>
@@ -674,7 +674,7 @@ please place it out of board.</text>
 <wire x1="43.18" y1="57.15" x2="43.18" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="C1" gate="G$1" pin="-"/>
 <wire x1="43.18" y1="53.34" x2="43.18" y2="49.53" width="0.1524" layer="91"/>
-<wire x1="30.48" y1="52.07" x2="30.48" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="44.45" x2="30.48" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="53.34" x2="30.48" y2="53.34" width="0.1524" layer="91"/>
 <junction x="43.18" y="53.34"/>
 <wire x1="30.48" y1="53.34" x2="17.78" y2="53.34" width="0.1524" layer="91"/>
@@ -696,7 +696,7 @@ please place it out of board.</text>
 <wire x1="43.18" y1="38.1" x2="30.48" y2="38.1" width="0.1524" layer="91"/>
 <junction x="43.18" y="38.1"/>
 <pinref part="C1" gate="G$1" pin="+"/>
-<wire x1="30.48" y1="38.1" x2="30.48" y2="44.45" width="0.1524" layer="91"/>
+<wire x1="30.48" y1="38.1" x2="30.48" y2="52.07" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$2" class="0">
