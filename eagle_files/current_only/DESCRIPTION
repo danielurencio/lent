@@ -33,5 +33,20 @@ OshPark: <a href='https://oshpark.com/shared_projects/Z7RA047C'>Emon Breakout Bo
 GitHub: <a href='https://github.com/Seeed-Studio/OPL_Eagle_Library'>OPL Eagle Library</a>
 </li>
 
+<li>
+Great explanation:<a href='https://programarfacil.com/blog/arduino-blog/sct-013-consumo-electrico-arduino/'>Spanish article</a>
+</li>
+
+<li>OpenEnergyMonitor: <a href='https://learn.openenergymonitor.org/electricity-monitoring/ct-sensors/extending-ct-cable'>Shows a picture that explains SCT sensor's audio-jack wiring</a></li>
+
+<li> Seeed's github.io:
+<a href='https://seeeddoc.github.io/Open_parts_library/'>Open parts library</a>
+</li>
+<li> ST-PJ-312: 
+<a href='https://seeeddoc.github.io/Open_parts_library/res/3440030P1.pdf'>PDF schematics</a>
+</li>
+
 </ul>
+
 </div>
+
