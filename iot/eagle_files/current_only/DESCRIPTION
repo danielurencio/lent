@@ -1,0 +1,52 @@
+<div>
+
+<b>Current sensor adapter PCB</b>
+
+<div>This is based on the <a href='https://learn.openenergymonitor.org/electricity-monitoring/ct-sensors/interface-with-arduino?redirected=true'>Open Energy Monitor</a> project for Arduino (more info <a href='https://github.com/openenergymonitor/learn/blob/master/view/electricity-monitoring/ct-sensors/how-to-build-an-arduino-energy-monitor-measuring-current-only.md'>here</a>).
+
+<br>
+<br>
+
+The objective of these Eagle files is to provide the schematics for manufacturing a PCB that is compatible with an Arduino Nano.
+
+<ul>
+Some other useful resources:
+
+<li>
+<a href='http://scidle.com/how-to-use-non-invasive-ac-current-sensors-with-arduino/'>How to use Non-invasive AC Current Sensors with Arduino</a>
+</li>
+
+<li>
+<a href='http://scidle.com/non-invasive-current-sensor-sct-013-000/#more-629'>Non-Invasive Current sensors SCT-013-000</a>
+</li>
+
+<li>
+Tindie: <a href='https://www.tindie.com/products/arduinopraxis/energy-monitor-board-pcb-incl-stereo-jack/#specs'>Energy Monitor Board PCB</a>
+</li>
+
+<li>
+OshPark: <a href='https://oshpark.com/shared_projects/Z7RA047C'>Emon Breakout Board Rev.A
+</a>
+</li>
+
+<li>
+GitHub: <a href='https://github.com/Seeed-Studio/OPL_Eagle_Library'>OPL Eagle Library</a>
+</li>
+
+<li>
+Great explanation:<a href='https://programarfacil.com/blog/arduino-blog/sct-013-consumo-electrico-arduino/'>Spanish article</a>
+</li>
+
+<li>OpenEnergyMonitor: <a href='https://learn.openenergymonitor.org/electricity-monitoring/ct-sensors/extending-ct-cable'>Shows a picture that explains SCT sensor's audio-jack wiring</a></li>
+
+<li> Seeed's github.io:
+<a href='https://seeeddoc.github.io/Open_parts_library/'>Open parts library</a>
+</li>
+<li> ST-PJ-312: 
+<a href='https://seeeddoc.github.io/Open_parts_library/res/3440030P1.pdf'>PDF schematics</a>
+</li>
+
+</ul>
+
+</div>
+
